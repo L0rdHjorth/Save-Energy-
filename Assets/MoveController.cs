@@ -19,6 +19,7 @@ public class MoveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetComponent<Animator>().SetFloat("Speed", GetComponent<Rigidbody2D>().velocity.magnitude);
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
