@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -20,15 +21,45 @@ public class MoveController : MonoBehaviour
     void Update()
     {
         GetComponent<Animator>().SetFloat("XSpeed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
-       GetComponent<Animator>().SetFloat("YSpeed",Mathf.Abs( GetComponent<Rigidbody2D>().velocity.y));
+        // GetComponent<Animator>().SetFloat("YSpeed2", GetComponent<Rigidbody2D>().velocity.y);
+        
+//GetComponent<Animator>().SetFloat("YSpeed", GetComponent<Rigidbody2D>().velocity.y);
+        //GetComponent<Animator>().SetFloat("YSpeed2", GetComponent<Rigidbody2D>().velocity.y);
+
+
+
 
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
         GetComponent<Rigidbody2D>().velocity = new Vector3(x, y, 0)*speed;
-        // reset move delta
 
-        // swap sprite direction i retningen den går
+        if (y < 0)
+        {
+            GetComponent<Animator>().SetFloat("YSpeed",Mathf.Abs( GetComponent<Rigidbody2D>().velocity.y));
+            GetComponent<Animator>().SetFloat("YSpeed2", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.y * 0));
+
+        }
+        else if (y > 0)
+        {
+            GetComponent<Animator>().SetFloat("YSpeed2", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.y));
+            GetComponent<Animator>().SetFloat("YSpeed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.y * 0));
+
+        }
+        else
+        {
+            GetComponent<Animator>().SetFloat("YSpeed2", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.y * 0));
+            GetComponent<Animator>().SetFloat("YSpeed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.y * 0));
+
+        }
+
+
+
+
+
+
+
+
 
         if (x > 0)
         {
