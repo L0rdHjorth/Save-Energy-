@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
-
+using UnityEngine.Rendering.Universal;
 
 public class MoveController : MonoBehaviour
 {
@@ -37,8 +37,24 @@ public class MoveController : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        
+        // sluk lys funktion
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            slukLys();
+        }
+    }
 
+    public void slukLys()
+    {
+        GameObject[] lysArray = GameObject.FindGameObjectsWithTag("Lys"); // Alt lys bliver sat ind i lysArray
+        foreach (GameObject lys in lysArray)
+        {
+            if (Vector3.Distance(lys.transform.position, transform.position) <= 0.5f) // lyset slukket hvis spilleren er tæt nok på
+            {
+                lys.GetComponent<Light2D>().intensity = 0;
+            }
+        }
 
     }
+
 }
