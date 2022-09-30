@@ -9,7 +9,7 @@ public class MoveController : MonoBehaviour
     private CircleCollider2D circleCollider;
 
     [SerializeField] float speed;
-    private Vector3 moveDelta;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +27,11 @@ public class MoveController : MonoBehaviour
 
         // swap sprite direction i retningen den går
 
-        if (moveDelta.x > 0)
+        if (x > 0)
         {
             transform.localScale = Vector3.one;
         }
-        else if (moveDelta.x < 0)
+        else if (x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
