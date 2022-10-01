@@ -17,7 +17,7 @@ public class LysCounter : MonoBehaviour
     void Update()
     {
         int antalLysSlukket = player.GetComponent<MoveController>().lysSlukket;
-        int antalLysIAlt = player.GetComponent<MoveController>().lysArray.Length;
+        int antalLysIAlt = player.GetComponent<MoveController>().lysArray.Length + player.GetComponent<MoveController>().kontaktArray.Length + player.GetComponent<MoveController>().lightsInKontakter;
         GetComponent<Text>().text = "Antal lys slukket: " + antalLysSlukket + "/" + antalLysIAlt;
     }
 }

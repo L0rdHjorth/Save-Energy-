@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class TriggerAnimation : MonoBehaviour
+public class TriggerAnimationRow : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] GameObject Player;
+    [SerializeField] GameObject player;
     public GameObject[] deskarray;
-    Animator Deskanime;
+    Animator Deskanimation;
+    [SerializeField] GameObject linkedLight;
     void Start()
     {
-        Deskanime = GetComponent<Animator>();
+        Deskanimation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,23 +20,22 @@ public class TriggerAnimation : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            animationstart();
+            deskanimationstart();
         }
+        deskanimationstart();
 
     }
 
-    public void animationstart()
+    public void deskanimationstart()
     {
         GameObject[] deskarray = GameObject.FindGameObjectsWithTag("Desk");
 
 
         foreach (GameObject Desk in deskarray)
         {
-            if (Vector3.Distance(Desk.transform.position,Player.transform.position) <= 0.6f)
+            if (linkedLight.GetComponent<Light2D>().intensity == 0)
             {
-                Deskanime.SetInteger("state", 1);
-
-
+                Deskanimation.SetInteger("state", 1);
             }
         }
     }

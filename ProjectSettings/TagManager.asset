@@ -11,6 +11,18 @@ TagManager:
   - Desk
   - Kontakt
   - ExitDoor
+  - KontaktMedFlereLys
+  - LobbyLight
+  - HallwayLight
+  - BreakroomLight
+  - OfficeRoomLight
+  - MainOfficeLight
+  - MainOfficeLight1
+  - BossOfficeLight
+  - BathroomLight
+  - MainOfficeDeskLight
+  - MainOfficeDeskLight1
+  - MainOfficeDeskLight2
   layers:
   - Default
   - TransparentFX
