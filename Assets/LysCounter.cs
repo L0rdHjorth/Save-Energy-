@@ -12,14 +12,13 @@ public class LysCounter : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        switchLys = GameObject.FindGameObjectsWithTag("switchlight");
     }
 
     // Update is called once per frame
     void Update()
     {
         int antalLysSlukket = player.GetComponent<MoveController>().lysSlukket;
-        int antalLysIAlt = player.GetComponent<MoveController>().lysArray.Length + player.GetComponent<MoveController>().kontaktArray.Length + player.GetComponent<MoveController>().lightsInKontakter - switchLys.Length;
+        int antalLysIAlt = player.GetComponent<MoveController>().lysArray.Length + player.GetComponent<MoveController>().kontaktArray.Length + player.GetComponent<MoveController>().lightsInKontakter;
         GetComponent<Text>().text = "Antal lys slukket: " + antalLysSlukket + "/" + antalLysIAlt ;
     }
 }

@@ -25,9 +25,6 @@ public class MoveController : MonoBehaviour
         lysArray = GameObject.FindGameObjectsWithTag("Lys"); // Alt lys bliver sat ind i lysArray 
         circleCollider = GetComponent<CircleCollider2D>();
         lysSlukket = 0;
-        print(lightsInKontakter);
-        print(kontaktArray.Length);
-        print(lysArray.Length);
     }
 
     // Update is called once per frame

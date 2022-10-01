@@ -25,6 +25,10 @@ TagManager:
   - MainOfficeDeskLight2
   - Boss
   - switchlight
+  - HallwayLight1
+  - BedRoomLight
+  - BedRoom1Light
+  - RoomLight
   layers:
   - Default
   - TransparentFX
