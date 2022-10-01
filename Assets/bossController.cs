@@ -9,15 +9,21 @@ public class bossController : MonoBehaviour
     GameObject[] Flashlights;
     [SerializeField] GameObject player;
     public float speed;
+    Animator anime;
     void Start()
     {
         Flashlights = GameObject.FindGameObjectsWithTag("Flashlight");
         player = GameObject.FindGameObjectWithTag("Player");
-        foreach (GameObject flashlight in Flashlights)
-        {
-            flashlight.transform.eulerAngles += new Vector3(0, 0, 90);
+        if (GameObject.FindGameObjectWithTag("Boss") == true){
+            foreach (GameObject flashlight in Flashlights)
+            {
+                if (Vector3.Distance(flashlight.transform.position, transform.position) <= 0.1)
+                {
+                    flashlight.transform.eulerAngles += new Vector3(0, 0, 90);
+                }
+            }
         }
-        
+        anime = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -33,6 +39,11 @@ public class bossController : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+            anime.SetTrigger("walk");
+        }
+        else
+        {
+            anime.SetTrigger("state");
         }
       
         

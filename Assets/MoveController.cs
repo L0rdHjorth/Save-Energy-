@@ -13,6 +13,8 @@ public class MoveController : MonoBehaviour
     private CircleCollider2D circleCollider;
     public int lysSlukket; //antal lys slukket
     public GameObject[] lysArray;
+    public GameObject[] kontaktArray;
+    public int lightsInKontakter = 0;
    
     [SerializeField] float speed;
     bool canExit = false;
@@ -95,7 +97,8 @@ public class MoveController : MonoBehaviour
     public void slukLys()
     {
         GameObject[] lysArray = GameObject.FindGameObjectsWithTag("Lys"); // Alt lys bliver sat ind i lysArray 
-        GameObject[] kontaktArray = GameObject.FindGameObjectsWithTag("Kontakt"); 
+        GameObject[] kontaktArray = GameObject.FindGameObjectsWithTag("Kontakt");
+        GameObject[] kontakterMedFlereLys = GameObject.FindGameObjectsWithTag("KontaktMedFlereLys");
 
         foreach (GameObject lys in lysArray)
         {
@@ -119,7 +122,14 @@ public class MoveController : MonoBehaviour
                 kontakt.GetComponent<Kontakt>().linkedLight.GetComponent<Light2D>().intensity = 0;
             }
         }
-        if (lysArray.Length + kontaktArray.Length == lysSlukket)
+        foreach (GameObject kontaktMedFlereLys in kontakterMedFlereLys)
+        {
+            if (Vector3.Distance(kontaktMedFlereLys.transform.position, transform.position) <= 1f)
+            {
+                kontaktMedFlereLys.GetComponent<KontaktFlereLys>().SlukAlleLys();
+            }
+        }
+        if (lysArray.Length + kontaktArray.Length + lightsInKontakter == lysSlukket)
         {
             canExit = true;
         }
