@@ -27,13 +27,6 @@ public class MoveController : MonoBehaviour
     void Update()
     {
         GetComponent<Animator>().SetFloat("XSpeed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
-        // GetComponent<Animator>().SetFloat("YSpeed2", GetComponent<Rigidbody2D>().velocity.y);
-        
-//GetComponent<Animator>().SetFloat("YSpeed", GetComponent<Rigidbody2D>().velocity.y);
-        //GetComponent<Animator>().SetFloat("YSpeed2", GetComponent<Rigidbody2D>().velocity.y);
-
-
-
 
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
@@ -58,13 +51,6 @@ public class MoveController : MonoBehaviour
             GetComponent<Animator>().SetFloat("YSpeed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.y * 0));
 
         }
-
-
-
-
-
-
-
 
 
         if (x > 0)
@@ -95,6 +81,7 @@ public class MoveController : MonoBehaviour
     public void slukLys()
     {
         GameObject[] lysArray = GameObject.FindGameObjectsWithTag("Lys"); // Alt lys bliver sat ind i lysArray 
+        GameObject[] kontaktArray = GameObject.FindGameObjectsWithTag("Kontakt"); 
 
         foreach (GameObject lys in lysArray)
         {
@@ -106,10 +93,21 @@ public class MoveController : MonoBehaviour
                 }
                 lys.GetComponent<Light2D>().intensity = 0;
             }
-            if (lysArray.Length == lysSlukket)
+        }
+        foreach (GameObject kontakt in kontaktArray)
+        {
+            if (Vector3.Distance(kontakt.transform.position, transform.position) <= 1f)
             {
-                GameOver();
+                if (kontakt.GetComponent<Kontakt>().linkedLight.GetComponent<Light2D>().intensity != 0)
+                {
+                    lysSlukket++;
+                }
+                kontakt.GetComponent<Kontakt>().linkedLight.GetComponent<Light2D>().intensity = 0;
             }
+        }
+        if (lysArray.Length + kontaktArray.Length == lysSlukket)
+        {
+            GameOver();
         }
 
     }//slukLys end 
