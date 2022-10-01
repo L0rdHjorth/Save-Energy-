@@ -26,8 +26,11 @@ public class KontaktFlereLys : MonoBehaviour
         for (int i = 0; i < lysArray.Length; i++)
         {
             linkedLight = lysArray[i];
+            if (linkedLight.GetComponent<Light2D>().intensity != 0)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<MoveController>().lysSlukket++;
+            }
             linkedLight.GetComponent<Light2D>().intensity = 0;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<MoveController>().lysSlukket++;
         }
     }
 }
