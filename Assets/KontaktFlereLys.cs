@@ -8,6 +8,7 @@ public class KontaktFlereLys : MonoBehaviour
     [SerializeField] string lightTag;
     GameObject[] lysArray;
     GameObject linkedLight;
+    public GameObject Switchlight;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,8 @@ public class KontaktFlereLys : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Player").GetComponent<MoveController>().lysSlukket++;
             }
             linkedLight.GetComponent<Light2D>().intensity = 0;
+
         }
+            Switchlight.GetComponent<Light2D>().intensity = 0;
     }
 }

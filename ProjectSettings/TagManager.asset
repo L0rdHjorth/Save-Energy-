@@ -24,6 +24,7 @@ TagManager:
   - MainOfficeDeskLight1
   - MainOfficeDeskLight2
   - Boss
+  - switchlight
   layers:
   - Default
   - TransparentFX
