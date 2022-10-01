@@ -14,9 +14,14 @@ public class bossController : MonoBehaviour
     {
         Flashlights = GameObject.FindGameObjectsWithTag("Flashlight");
         player = GameObject.FindGameObjectWithTag("Player");
-        foreach (GameObject flashlight in Flashlights)
-        {
-            flashlight.transform.eulerAngles += new Vector3(0, 0, 90);
+        if (GameObject.FindGameObjectWithTag("Boss") == true){
+            foreach (GameObject flashlight in Flashlights)
+            {
+                if (Vector3.Distance(flashlight.transform.position, transform.position) <= 0.1)
+                {
+                    flashlight.transform.eulerAngles += new Vector3(0, 0, 90);
+                }
+            }
         }
         anime = GetComponent<Animator>();
     }
