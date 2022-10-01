@@ -16,6 +16,7 @@ public class MoveController : MonoBehaviour
     [SerializeField] AudioClip clip;
     [SerializeField] AudioSource source;
     [SerializeField] float speed;
+    bool canExit = false;
     
     // Start is called before the first frame update
     void Start()
@@ -81,6 +82,17 @@ public class MoveController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "ExitDoor")
+        {
+            if (canExit)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
+    }
+
     public void slukLys()
     {
         GameObject[] lysArray = GameObject.FindGameObjectsWithTag("Lys"); // Alt lys bliver sat ind i lysArray 
@@ -110,13 +122,8 @@ public class MoveController : MonoBehaviour
         }
         if (lysArray.Length + kontaktArray.Length == lysSlukket)
         {
-            GameOver();
+            canExit = true;
         }
 
     }//slukLys end 
-    public void GameOver()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
 }
