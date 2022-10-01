@@ -29,6 +29,8 @@ TagManager:
   - BedRoomLight
   - BedRoom1Light
   - RoomLight
+  - BedRoom1Light1
+  - BedRoom1Light2
   layers:
   - Default
   - TransparentFX
