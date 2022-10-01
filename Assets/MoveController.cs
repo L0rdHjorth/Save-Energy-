@@ -17,7 +17,7 @@ public class MoveController : MonoBehaviour
     public int lightsInKontakter = 0;
    
     [SerializeField] float speed;
-    bool canExit = false;
+    public bool canExit = false;
     
     // Start is called before the first frame update
     void Start()
