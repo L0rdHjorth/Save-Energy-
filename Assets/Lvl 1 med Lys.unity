@@ -6710,6 +6710,30 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1544574938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 146955195640329061, guid: e78dc26972717384bbce29faaaec4a9c, type: 3}
+  m_PrefabInstance: {fileID: 146955194768975039}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1544574942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544574938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f72184f377b2104cb2fed5e6ae6d7ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1619444710}
+  deskarray: []
+--- !u!1 &1619444710 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5671841926858439781, guid: 20345a67619c79d4daf454ef103e7bf0, type: 3}
+  m_PrefabInstance: {fileID: 1345718804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1679309734
 GameObject:
   m_ObjectHideFlags: 0
@@ -7056,11 +7080,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146955195640329059, guid: e78dc26972717384bbce29faaaec4a9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.37
+      value: 15.53
       objectReference: {fileID: 0}
     - target: {fileID: 146955195640329059, guid: e78dc26972717384bbce29faaaec4a9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.89
+      value: -1.86
       objectReference: {fileID: 0}
     - target: {fileID: 146955195640329059, guid: e78dc26972717384bbce29faaaec4a9c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7098,5 +7122,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Desk worker_0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 146955195640329061, guid: e78dc26972717384bbce29faaaec4a9c, type: 3}
+      propertyPath: m_TagString
+      value: Desk
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 146955195640329057, guid: e78dc26972717384bbce29faaaec4a9c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e78dc26972717384bbce29faaaec4a9c, type: 3}

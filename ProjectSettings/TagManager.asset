@@ -8,6 +8,7 @@ TagManager:
   - HorizontalAI
   - VerticalAI
   - Flashlight
+  - Desk
   layers:
   - Default
   - TransparentFX
