@@ -81,6 +81,15 @@ public class MoveController : MonoBehaviour
         {
             slukLys();
         }
+
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Flashlight")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public void slukLys()
