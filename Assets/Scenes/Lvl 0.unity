@@ -3966,6 +3966,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 6, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 2
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 3, y: 2, z: 0}
     second:
       serializedVersion: 2
@@ -4002,13 +4012,17 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 3ecc8cb07b675734aa8a8c7959c9bbad, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: 3de4ab3af0b2cf14cbd58fe3d72550b0, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 809ac229d894aa24f8f433aec1639d5e, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 2bc47789336a60c4991a17802e18dc9b, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: -120877081, guid: 28579e512e28a4141b0dda158d64e3d5, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1717835549, guid: 9f8780bb881b7524aacacee8824cf193, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data:
       e00: 1
       e01: 0
@@ -4027,7 +4041,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -4232,6 +4246,7 @@ GameObject:
   - component: {fileID: 1613062485}
   - component: {fileID: 1613062484}
   - component: {fileID: 1613062483}
+  - component: {fileID: 1613062486}
   m_Layer: 0
   m_Name: Toy_0
   m_TagString: Untagged
@@ -4326,6 +4341,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1613062486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613062482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f72184f377b2104cb2fed5e6ae6d7ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  deskarray: []
 --- !u!1 &1678658173
 GameObject:
   m_ObjectHideFlags: 0
