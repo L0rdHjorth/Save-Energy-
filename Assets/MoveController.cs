@@ -13,8 +13,7 @@ public class MoveController : MonoBehaviour
     private CircleCollider2D circleCollider;
     public int lysSlukket; //antal lys slukket
     public GameObject[] lysArray;
-    [SerializeField] AudioClip clip;
-    [SerializeField] AudioSource source;
+   
     [SerializeField] float speed;
     bool canExit = false;
     
@@ -24,7 +23,7 @@ public class MoveController : MonoBehaviour
         lysArray = GameObject.FindGameObjectsWithTag("Lys"); // Alt lys bliver sat ind i lysArray 
         circleCollider = GetComponent<CircleCollider2D>();
         lysSlukket = 0;
-        source.PlayOneShot(clip);
+       
     }
 
     // Update is called once per frame
