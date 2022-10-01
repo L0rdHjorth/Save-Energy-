@@ -9,6 +9,7 @@ public class bossController : MonoBehaviour
     GameObject[] Flashlights;
     [SerializeField] GameObject player;
     public float speed;
+    Animator anime;
     void Start()
     {
         Flashlights = GameObject.FindGameObjectsWithTag("Flashlight");
@@ -17,7 +18,7 @@ public class bossController : MonoBehaviour
         {
             flashlight.transform.eulerAngles += new Vector3(0, 0, 90);
         }
-        
+        anime = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -33,6 +34,11 @@ public class bossController : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+            anime.SetTrigger("walk");
+        }
+        else
+        {
+            anime.SetTrigger("state");
         }
       
         
