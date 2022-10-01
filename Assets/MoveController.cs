@@ -10,14 +10,15 @@ using UnityEngine.Rendering.Universal;
 public class MoveController : MonoBehaviour
 {
     private CircleCollider2D circleCollider;
-    int lysSlukket; //antal lys slukket
+    public int lysSlukket; //antal lys slukket
+    public GameObject[] lysArray;
 
     [SerializeField] float speed;
     
     // Start is called before the first frame update
     void Start()
     {
-        print("hello world");
+        lysArray = GameObject.FindGameObjectsWithTag("Lys"); // Alt lys bliver sat ind i lysArray 
         circleCollider = GetComponent<CircleCollider2D>();
         lysSlukket = 0;
     }
@@ -90,27 +91,22 @@ public class MoveController : MonoBehaviour
         {
             if (Vector3.Distance(lys.transform.position, transform.position) <= 1f) // lyset slukket hvis spilleren er tæt nok på
             {
-                print(lysArray.Length);
                 if (lys.GetComponent<Light2D>().intensity != 0)
                 {
                     lysSlukket++;
-
                 }
                 lys.GetComponent<Light2D>().intensity = 0;
             }
             if (lysArray.Length == lysSlukket)
             {
                 GameOver();
-                print("lys end");
             }
         }
 
     }//slukLys end 
     public void GameOver()
     {
-        SceneManager.SetActiveScene(SceneManager.GetActiveScene());
-        print("END");
-        UnityEditor.EditorApplication.isPlaying = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }
