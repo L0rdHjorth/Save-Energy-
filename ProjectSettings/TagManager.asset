@@ -73,3 +73,6 @@ TagManager:
   - name: Player
     uniqueID: 3817173459
     locked: 0
+  - name: Nurse
+    uniqueID: 2947848837
+    locked: 0
