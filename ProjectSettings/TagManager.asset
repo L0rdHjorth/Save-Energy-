@@ -33,6 +33,7 @@ TagManager:
   - BedRoom1Light2
   - QueenLight
   - Queen
+  - VocalReactions
   layers:
   - Default
   - TransparentFX
