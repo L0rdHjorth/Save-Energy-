@@ -962,8 +962,8 @@ Tilemap:
   - first: {x: 2, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 19
-      m_TileSpriteIndex: 19
+      m_TileIndex: 36
+      m_TileSpriteIndex: 36
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1419,7 +1419,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: d9ea44044dd9b084d8067ac84d795812, type: 2}
   - m_RefCount: 11
     m_Data: {fileID: 11400000, guid: eec12c9c3ce5bae42811d49caef5f343, type: 2}
-  - m_RefCount: 11
+  - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: f0e0e10677a89e947aa240678835568f, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 9fb463b3e6ca77e419c33ed433dbac40, type: 2}
@@ -1453,6 +1453,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 08b895f3fc3dde34ca3af4e3a78b0f9f, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 08eaa06b93051884ea6d4b3869d9cedf, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 1b13383fd1754af4596d09fe50bfd916, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: -1488341458, guid: 6e5a8c7a3ab5111428b8ceb3ef0a4d5d, type: 3}
@@ -1492,7 +1494,7 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 6ae5ee4fcc59c514faab07324047cb98, type: 3}
   - m_RefCount: 11
     m_Data: {fileID: 21300000, guid: e22584f9068172e4d993950c44c2539c, type: 3}
-  - m_RefCount: 11
+  - m_RefCount: 10
     m_Data: {fileID: 21300000, guid: 35b8dd228659e734e99e386c1d3d1b8c, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 21300000, guid: 9677b6f3640a80345bd4757addcfdb19, type: 3}
@@ -1526,6 +1528,8 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 6cfe3e937334bbc41ac89fdf0d362b6e, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 131869405, guid: 6e5a8c7a3ab5111428b8ceb3ef0a4d5d, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 3588ad353a02ad84f9f8af125f94bedd, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 98
     m_Data:
@@ -3406,7 +3410,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
