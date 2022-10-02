@@ -20,7 +20,7 @@ public class queenAI : MonoBehaviour
     {
         if (timeBtwShots <= 0)
         {
-            Instantiate(projectile, transform.position, Quaternion.identity);
+            Instantiate(projectile, transform.position, Quaternion.identity);   
             timeBtwShots = startTimeBtwShots;
         }
         else
