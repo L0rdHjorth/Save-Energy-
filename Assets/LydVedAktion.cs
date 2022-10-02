@@ -10,6 +10,7 @@ public class LydVedAktion : MonoBehaviour
     [SerializeField] GameObject linkedLight;
     bool hasSpoken = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,10 @@ public class LydVedAktion : MonoBehaviour
         {
             if (linkedLight.GetComponent<Light2D>().intensity == 0)
             {
+                if (tag == "Desk")
+                {
+                    clip = GameObject.FindGameObjectWithTag("VocalReactions").GetComponent<VocalReactions>().clips[Random.RandomRange(0,7)];
+                }
                 source.PlayOneShot(clip);
                 hasSpoken = true;
             }
