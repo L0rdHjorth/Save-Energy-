@@ -30,6 +30,7 @@ public class LydVedAktion : MonoBehaviour
                 }
                 source.PlayOneShot(clip);
                 hasSpoken = true;
+
             }
         }
 
