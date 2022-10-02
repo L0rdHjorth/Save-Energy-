@@ -19,7 +19,6 @@ public class IsChildDying : MonoBehaviour
         if (linkedLight.GetComponent<Light2D>().intensity == 0)
         {
             animator.SetBool("IsDead", true);
-            print("denne del virker");
         }
     }
 }
