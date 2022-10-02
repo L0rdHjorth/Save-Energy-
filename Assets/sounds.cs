@@ -22,7 +22,7 @@ public class sounds : MonoBehaviour
     {
         if (!hasPlayed)
         {
-            if (Time.time > 10f)
+            if (Time.time > 15f)
             {
                 source.PlayOneShot(clip2);
                 hasPlayed = true;
