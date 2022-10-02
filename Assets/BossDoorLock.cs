@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BossDoorLock : MonoBehaviour
 {
-    bool DoorsAreUnlocked = false;
     // Start is called before the first frame update
     void Start()
     {
